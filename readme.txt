@@ -1,1 +1,1 @@
-Conhecendo sobre React teste teste
+Conhecendo sobre React teste
