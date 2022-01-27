@@ -81,12 +81,21 @@ textarea:focus {
 	white-space: pre-wrap;
 }
 
+.note-done{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .note-footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
+.done-icon{
+	cursor: pointer;
+}
 .delete-icon {
 	cursor: pointer;
 }
