@@ -16,7 +16,6 @@ const NotesList = ({notes, handleAddNote, handleDeleteNote, handleDoneNote }) =>
         ))}
         <AddNote handleAddNote = {handleAddNote}/>
     </div>
-    //testes
 }
 
 export default NotesList;
