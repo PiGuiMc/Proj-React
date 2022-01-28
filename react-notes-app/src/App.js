@@ -9,17 +9,20 @@ const App = () =>{
     {
     id: nanoid(),
     text: "This is my first note!",
-    date: "27/04/2022"
+    date: "27/04/2022",
+    completed: true
     },
     {
       id: nanoid(),
       text: "This is my second note!",
-      date: "28/04/2022"
+      date: "28/04/2022",
+      completed: false
       },
       {
         id: nanoid(),
         text: "This is my third note!",
-        date: "29/04/2022"
+        date: "29/04/2022",
+        completed: true
         },
 ]);
 
@@ -49,7 +52,8 @@ const addNote = (text) => {
   const newNote = {
     id: nanoid(),
     text: text,
-    date: date.toLocaleDateString()
+    date: date.toLocaleDateString(),
+    completed: true
   }
 
   const newNotes = [...notes, newNote];
@@ -61,6 +65,20 @@ const deleteNote = (id) => {
   setNotes(newNotes);
 }
 
+const doneNote = (id) => {
+  const newNotes = notes.filter(note => {
+    if(note.completed){
+      note.completed = false
+    }else{
+      note.completed = true
+    }
+    console.log(id, note.completed)
+    return note;
+  });
+
+  setNotes(newNotes)
+};
+
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">
@@ -69,6 +87,7 @@ const deleteNote = (id) => {
           <NotesList notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText))} 
           handleAddNote={addNote}
           handleDeleteNote = {deleteNote}
+          handleDoneNote = {doneNote}
           />
         </div>
     </div>
